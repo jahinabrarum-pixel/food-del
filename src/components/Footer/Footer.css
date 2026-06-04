@@ -1,0 +1,133 @@
+.footer{
+    color: #d9d9d9;
+    background: linear-gradient(135deg, #1f1f1f, #323232);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    padding: 20px 8vw;
+    padding-top: 80px;
+    margin-top: 100px;
+    position: relative;
+    overflow: hidden;
+}
+
+/* top glow effect */
+.footer::before{
+    content: "";
+    position: absolute;
+    top: -120px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 500px;
+    height: 250px;
+    background: rgba(255, 99, 71, 0.08);
+    filter: blur(80px);
+    border-radius: 50%;
+}
+
+.footer-content{
+    width: 100%;
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+    gap: 80px;
+    position: relative;
+    z-index: 1;
+}
+
+.footer-content-left,
+.footer-content-right,
+.footer-content-center{
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    gap: 20px;
+}
+
+.footer-content-left p{
+    line-height: 1.8;
+    color: #bdbdbd;
+    max-width: 500px;
+}
+
+.footer-content-left li,
+.footer-content-right li,
+.footer-content-center li{
+    list-style: none;
+    margin-bottom: 10px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    color: #cfcfcf;
+}
+
+.footer-content-left li:hover,
+.footer-content-right li:hover,
+.footer-content-center li:hover{
+    color: #ffffff;
+    transform: translateX(5px);
+}
+
+.footer-content-right h2,
+.footer-content-center h2{
+    color: white;
+    font-size: 24px;
+    position: relative;
+    padding-bottom: 8px;
+}
+
+/* underline effect */
+.footer-content-right h2::after,
+.footer-content-center h2::after{
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 45px;
+    height: 3px;
+    background: tomato;
+    border-radius: 10px;
+}
+
+.footer-socail-icons{
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.footer-socail-icons img{
+    width: 40px;
+    cursor: pointer;
+    transition: all 0.35s ease;
+    filter: brightness(0.9);
+}
+
+.footer-socail-icons img:hover{
+    transform: translateY(-6px) scale(1.08);
+    filter: brightness(1.2);
+}
+
+.footer hr{
+    width: 100%;
+    height: 1px;
+    margin: 20px 0;
+    background: rgba(255,255,255,0.15);
+    border: none;
+}
+
+.footer-copyright{
+    text-align: center;
+    font-size: 14px;
+    color: #aaaaaa;
+    letter-spacing: 0.4px;
+}
+
+@media (max-width:750px) {
+    .footer-content {
+        display: flex;
+        flex-direction: column;
+        gap: 35px;
+    }
+    .footer-copyright{
+        text-align: center;
+    }  
+}
